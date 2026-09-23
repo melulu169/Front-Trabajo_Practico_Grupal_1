@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Melisa - Yoda Labs</title>
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Hojas de estilos compartidas -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/perfiles.css">
+
+    <!-- Estilos personalizado -->
+    <style>
+        #tarjeta-perfil {
+            --verde-yoda: #e63c3c;   
+            --verde-fuerza: #bb1414; 
+        }
+
+        /* Personalización Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090D14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #bb1414;
+            border-radius: 6px;
+            border: 3px solid #090D14;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e63c3c;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animación de estrellas -->
+    <canvas id="espacio-canvas"></canvas>
+
+<!-- Encabezado -->
+    <header class="header-perfil">
+        <a href="index.html" class="logo-contenedor">
+            <img src="img/Icon.png" alt="Icono Yoda" class="icono-nav">
+            <img src="img/yodalabs.png" alt="Texto Yoda Labs" class="texto-nav">
+        </a>
+        <nav class="navegacion-principal">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="bitacora.html" class="nav-link">Bitácora</a>
+        </nav>
+    </header>
+
+    <main class="contenedor-principal">
+        <!-- Tarjeta con efecto Flip -->
+        <section class="tarjeta-flip" id="tarjeta-perfil">
+            <div class="tarjeta-inner">
+                
+                <!-- LADO FRONTAL -->
+                <div class="tarjeta-frente">
+                    <div class="columna-izq">
+                        <img src="img/yoda6.jpg" alt="Avatar Yoda" class="img-perfil">
+                        <p class="click-hint">¡Más sobre mí!</p>
+                    </div>
+                    <div class="columna-der">
+                        <h1 class="nombre-perfil">Melisa Solano</h1>
+                        <p class="datos-personales">36 años | Buenos Aires</p>
+                        
+                        <div class="tecnologias">
+                            <img src="img/icono-html5.png" alt="HTML5" class="icono-tech">
+                            <img src="img/icono-css3.png" alt="CSS3" class="icono-tech">
+                            <img src="img/icono-js.png" alt="JavaScript" class="icono-tech">
+                            <img src="img/icono-python.png" alt="Python" class="icono-tech">
+                            <img src="img/icono-csharp.png" alt="C#" class="icono-tech">
+                            <img src="img/icono-github.png" alt="GitHub" class="icono-tech">
+                        </div>
+
+                        <div class="cualidades">
+                            <h3>Cualidades y Habilidades</h3>
+                            <ul>
+                                <li>Manualidades</li>
+                                <li>Matematicas</li>
+                                <li>Trabajo en equipo</li>
+                                <li>Rapidez</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LADO TRASERO -->
+                <div class="tarjeta-dorso">
+                    <div class="columna-izq">
+                        <img src="img/yoda6.jpg" alt="Avatar de Melisa" class="img-perfil">
+                    </div>
+                    <div class="columna-der">
+                        <h1 class="nombre-perfil">Melisa Solano</h1>
+                        <p class="datos-personales">36 años | Buenos Aires</p>
+
+                        <div class="favoritos">
+                            <h3>Películas Favoritas</h3>
+                            <div class="galeria-peliculas">
+                               <img src="img/comer-rezar-amar.jpg" alt="Comer, rezar, amar">
+                               <img src="img/titanic.webp" alt="Titanic">
+                               <img src="img/diario-de-una-pasion.webp" alt="Diario de una pasión">
+                            </div>
+
+                            <h3>Discos Favoritos</h3>
+<div class="galeria-discos">
+    <div class="disco-item">
+        <img src="img/donde-estan-los-ladrones.webp" alt="¿Dónde están los ladrones? - Shakira">
+        <span>¿Dónde están los ladrones?<br>Shakira</span>
+    </div>
+
+    <div class="disco-item">
+        <img src="img/rocanroles-sin-destino.jfif" alt="Rocanroles sin destino - Callejeros">
+        <span>Rocanroles sin destino<br>Callejeros</span>
+    </div>
+
+    <div class="disco-item">
+        <img src="img/bang-bang-estas-liquidado.jfif" alt="¡Bang! ¡Bang!... Estás liquidado - Los Redondos">
+        <span>¡Bang! ¡Bang!... Estás liquidado<br>Los Redondos</span>
+    </div>
+</div>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-sitio">
+        <p>Yoda Labs · TP1 · FrontEnd · IFTS N°29 · 2026</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/perfiles.js"></script>
+</body>
+</html>

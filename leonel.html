@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Leonel - Yoda Labs</title>
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Hojas de estilos compartidas -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/perfiles.css">
+
+    <!-- Estilos personalizado -->
+    <style>
+        #tarjeta-perfil {
+            --verde-yoda: #007bff;   
+            --verde-fuerza: #095db7; 
+        }
+
+        /* Personalización Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090D14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #095db7;
+            border-radius: 6px;
+            border: 3px solid #090D14;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animación de estrellas -->
+    <canvas id="espacio-canvas"></canvas>
+
+<!-- Encabezado -->
+    <header class="header-perfil">
+        <a href="index.html" class="logo-contenedor">
+            <img src="img/Icon.png" alt="Icono Yoda" class="icono-nav">
+            <img src="img/yodalabs.png" alt="Texto Yoda Labs" class="texto-nav">
+        </a>
+        <nav class="navegacion-principal">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="bitacora.html" class="nav-link">Bitácora</a>
+        </nav>
+    </header>
+
+    <main class="contenedor-principal">
+        <!-- Tarjeta con efecto Flip -->
+        <section class="tarjeta-flip" id="tarjeta-perfil">
+            <div class="tarjeta-inner">
+                
+                <!-- LADO FRONTAL -->
+                <div class="tarjeta-frente">
+                    <div class="columna-izq">
+                        <img src="img/yoda2.jpg" alt="Avatar Yoda" class="img-perfil">
+                        <p class="click-hint">¡Más sobre mí!</p>
+                    </div>
+                    <div class="columna-der">
+                        <h1 class="nombre-perfil">Leonel Diaz</h1>
+                        <p class="datos-personales">24 años | Santa Fé</p>
+                        
+                        <div class="tecnologias">
+                            <img src="img/icono-html5.png" alt="HTML5" class="icono-tech">
+                            <img src="img/icono-css3.png" alt="CSS3" class="icono-tech">
+                            <img src="img/icono-js.png" alt="JavaScript" class="icono-tech">
+                            <img src="img/icono-python.png" alt="Python" class="icono-tech">
+                            <img src="img/icono-csharp.png" alt="C#" class="icono-tech">
+                            <img src="img/icono-github.png" alt="GitHub" class="icono-tech">
+                        </div>
+
+                        <div class="cualidades">
+                            <h3>Cualidades y Habilidades</h3>
+                            <ul>
+                                <li>Mentalidad analítica</li>
+                                <li>Resolución de problemas</li>
+                                <li>Trabajo en equipo</li>
+                                <li>Atención al detalle</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LADO TRASERO -->
+                <div class="tarjeta-dorso">
+                    <div class="columna-izq">
+                        <img src="img/avatar-leonel.jpg" alt="Avatar Leonel" class="img-perfil">
+                    </div>
+                    <div class="columna-der">
+                        <h1 class="nombre-perfil">Leonel Diaz</h1>
+                        <p class="datos-personales">24 años | Santa Fé</p>
+                        
+                        <div class="favoritos">
+                            <h3>Películas Favoritas</h3>
+                            <div class="galeria-peliculas">
+                                <img src="img/interestelar.jpg" alt="Interestelar">
+                                <img src="img/diario-de-una-pasion.png" alt="Diario de una Pasión">
+                                <img src="img/SW-episodio3.jpg" alt="Star Wars Episodio III">
+                            </div>
+
+                            <h3>Discos Favoritos</h3>
+                            <div class="galeria-discos">
+                                <a href="https://music.youtube.com/playlist?list=OLAK5uy_nfwRW_R_Ae5rGF3sQqpu9a9Luiu87z424&si=jqxe7_-USb65co_s" target="_blank" class="disco-item">
+                                    <img src="img/piero-piccioni-Camille2000.png" alt="Portada Camille 2000 Piero Piccioni">
+                                    <span>Camille 2000<br>Piero Piccioni</span>
+                                </a>
+                                <a href="https://music.youtube.com/playlist?list=OLAK5uy_m_YE8V5uZV0tjATvlZr7vTkzhgo1zXDhQ&si=GottUS0-pmFytjka" target="_blank" class="disco-item">
+                                    <img src="img/idslp-piero-piccioni.png" alt="Portada Il Dio Sotto La Pelle Piero Piccioni">
+                                    <span>Il Dio Sotto La Pelle<br>Piero Piccioni</span>
+                                </a>
+                                <a href="https://music.youtube.com/playlist?list=OLAK5uy_lFtDy_4_ryghOYm6680MKJfzOULdtHp7g&si=2mMkB3G7t1BoTWWp" target="_blank" class="disco-item">
+                                    <img src="img/amore-mio-aiutami-piero-piccioni.png" alt="Portada Amore Mio Aiutami Piero Piccioni">
+                                    <span>Amore Mio Aiutami<br>Piero Piccioni</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-sitio">
+        <p>Yoda Labs · TP1 · FrontEnd · IFTS N°29 · 2026</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/perfiles.js"></script>
+</body>
+</html>

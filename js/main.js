@@ -1,51 +1,105 @@
-// Inicializa el tema guardado y permite alternarlo desde cualquier página.
-const themeButtons = document.querySelectorAll("[data-theme-toggle]");
-const savedTheme = localStorage.getItem("grupo29-theme");
+const canvas = document.getElementById('espacio-canvas');
+const ctx = canvas.getContext('2d');
 
-function applyTheme(theme) {
-  const darkMode = theme === "dark";
+function ajustarTamanio() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', ajustarTamanio);
+ajustarTamanio();
 
-  if (darkMode) document.documentElement.setAttribute("data-theme", "dark");
-  else document.documentElement.removeAttribute("data-theme");
+// Configuración de las estrellas
+const estrellas = [];
+const CANTIDAD_ESTRELLAS = 150;
 
-  themeButtons.forEach((button) => {
-    button.textContent = darkMode ? "Modo claro" : "Modo oscuro";
-    button.setAttribute(
-      "aria-label",
-      darkMode ? "Activar modo claro" : "Activar modo oscuro",
-    );
-  });
+class Estrella {
+    constructor() {
+        this.resetear();
+    }
+
+    // Genera una estrella en una posición aleatoria
+    resetear() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.z = Math.random() * canvas.width;
+        this.radio = Math.random() * 1.5 + 0.5;
+    }
+
+    // Actualiza la posición para simular que se acerca
+    actualizar() {
+        this.z -= 2; // Velocidad de acercamiento
+        
+        // Si la estrella "pasa" la pantalla, vuelve al fondo
+        if (this.z <= 0) {
+            this.resetear();
+            this.z = canvas.width;
+        }
+    }
+
+    // Dibuja la estrella en el canvas calculando la perspectiva
+    dibujar() {
+        let posX = (this.x - canvas.width / 2) * (canvas.width / this.z) + canvas.width / 2;
+        let posY = (this.y - canvas.height / 2) * (canvas.width / this.z) + canvas.height / 2;
+        
+        let radioProyectado = this.radio * (canvas.width / this.z);
+
+        ctx.beginPath();
+        ctx.arc(posX, posY, radioProyectado, 0, Math.PI * 2);
+        ctx.fillStyle = '#E2E8F0'; 
+        ctx.fill();
+    }
 }
 
-applyTheme(savedTheme === "dark" ? "dark" : "light");
+// Llenar el array con las estrellas
+for (let i = 0; i < CANTIDAD_ESTRELLAS; i++) {
+    estrellas.push(new Estrella());
+}
 
-themeButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const darkMode =
-      document.documentElement.getAttribute("data-theme") === "dark";
-    const nextTheme = darkMode ? "light" : "dark";
+// Bucle que dibuja los frames continuamente
+function animarEspacio() {
+    // Fondo semitransparente para dejar una "estela" en el movimiento
+    ctx.fillStyle = 'rgba(9, 13, 20, 0.8)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    applyTheme(nextTheme);
-    localStorage.setItem("grupo29-theme", nextTheme);
-  });
-});
-
-// Configura las pestañas de los perfiles y muestra un panel por vez.
-document.querySelectorAll(".tabs").forEach((tabs) => {
-  const buttons = tabs.querySelectorAll("[data-tab]");
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const profileContent = tabs.parentElement;
-      buttons.forEach((tabButton) => {
-        const isSelected = tabButton === button;
-        tabButton.classList.toggle("active", isSelected);
-        tabButton.setAttribute("aria-selected", isSelected);
-      });
-      profileContent.querySelectorAll(".tab-panel").forEach((panel) => {
-        const isVisible = panel.id === button.dataset.tab;
-        panel.classList.toggle("active", isVisible);
-        panel.hidden = !isVisible;
-      });
+    estrellas.forEach(estrella => {
+        estrella.actualizar();
+        estrella.dibujar();
     });
-  });
+
+    requestAnimationFrame(animarEspacio);
+}
+
+animarEspacio(); // Iniciar animación del fondo
+
+
+// SCROLL Y ANIMACIONES
+document.addEventListener('DOMContentLoaded', () => {
+    
+    const textoDesc = document.getElementById('texto-desc');
+    
+    if (textoDesc) {
+        const observadorDesc = new IntersectionObserver((entradas) => {
+            if (entradas[0].isIntersecting) {
+                textoDesc.classList.add('aparecer');
+            }
+        }, { threshold: 0.4 });
+        
+        observadorDesc.observe(textoDesc);
+    }
+
+    // Anclar el encabezado
+    const headerOculto = document.getElementById('header-oculto');
+    const seccionIntegrantes = document.getElementById('seccion-integrantes');
+
+    if (headerOculto && seccionIntegrantes) {
+        window.addEventListener('scroll', () => {
+            const distanciaTop = seccionIntegrantes.getBoundingClientRect().top;
+            
+            if (distanciaTop <= 100) {
+                headerOculto.classList.add('visible');
+            } else {
+                headerOculto.classList.remove('visible');
+            }
+        });
+    }
 });

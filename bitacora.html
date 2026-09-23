@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitácora de Misión - Yoda Labs</title>
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Hojas de estilos -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bitacora.css">
+</head>
+<body>
+    <!-- Canvas del espacio estelar -->
+    <canvas id="espacio-canvas"></canvas>
+
+    <!-- Encabezado fijo con estética galáctica -->
+    <header class="header-perfil">
+        <a href="index.html" class="logo-contenedor">
+            <img src="img/Icon.png" alt="Icono Yoda" class="icono-nav">
+            <img src="img/yodalabs.png" alt="Texto Yoda Labs" class="texto-nav">
+        </a>
+        <nav class="navegacion-principal">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="bitacora.html" class="nav-link activo">Bitácora</a>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="bitacora-main">
+        
+        <!-- Enlace de regreso rápido -->
+        <div class="volver-contenedor">
+            <a href="index.html" class="btn-volver-laser">
+                <span>←</span> Volver a la Base
+            </a>
+        </div>
+
+        <!-- Hero de Bitácora / Terminal Holocrón -->
+        <section class="bitacora-hero">
+            <div class="terminal-badge">
+                <span class="radar-dot"></span>
+                <span>Registro Estelar // IFTS N°29</span>
+            </div>
+            <h1 class="bitacora-title">Bitácora de <span>Desarrollo</span></h1>
+            <p class="bitacora-lead">
+                Documentación cronológica de la travesía técnica: decisiones de arquitectura, hitos del escuadrón, desafíos superados y evolución del proyecto Yoda Labs.
+            </p>
+            <div class="yoda-quote">
+                <span>⚡</span>
+                <p>«Hacer o no hacer. No existe el intentar.» — Gran Maestro Yoda</p>
+            </div>
+        </section>
+
+        <!-- Métricas Rápidas del Proyecto -->
+        <section class="metricas-grid">
+            <article class="metrica-card">
+                <div class="metrica-icon">🚀</div>
+                <div class="metrica-info">
+                    <h4>Misión</h4>
+                    <p>Fase 1 Completa</p>
+                </div>
+            </article>
+
+            <article class="metrica-card">
+                <div class="metrica-icon">👥</div>
+                <div class="metrica-info">
+                    <h4>Escuadrón</h4>
+                    <p>5 Desarrolladores</p>
+                </div>
+            </article>
+
+            <article class="metrica-card">
+                <div class="metrica-icon">⚡</div>
+                <div class="metrica-info">
+                    <h4>Ecosistema</h4>
+                    <p>HTML5 · CSS3 · JS</p>
+                </div>
+            </article>
+
+            <article class="metrica-card">
+                <div class="metrica-icon">🛡️</div>
+                <div class="metrica-info">
+                    <h4>Estado del Código</h4>
+                    <p>100% Lado Luminoso</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- Filtros interactivos -->
+        <section class="filtros-seccion">
+            <div class="filtros-bitacora">
+                <button class="filtro-btn activo" data-filtro="todos">Todos los Registros</button>
+                <button class="filtro-btn" data-filtro="avance">Avances</button>
+                <button class="filtro-btn" data-filtro="decision">Decisiones</button>
+                <button class="filtro-btn" data-filtro="desafio">Desafíos</button>
+            </div>
+        </section>
+
+        <!-- Timeline de Hitos / Entradas de Bitácora -->
+        <section class="timeline-seccion">
+            <div class="timeline-contenedor">
+
+                <!-- Entrada 1: Inicio y Concepto -->
+                <div class="timeline-item" data-categoria="decision">
+                    <div class="timeline-nodo"></div>
+                    <article class="holo-card">
+                        <header class="holo-header">
+                            <div class="holo-fecha-tag">
+                                <span>📅</span> <span>Hito 1 · 12/03/2026</span>
+                            </div>
+                            <span class="tipo-badge tipo-decision">Decisión de Diseño</span>
+                        </header>
+                        <h3 class="holo-title">Definición de Identidad Visual: Yoda Labs & Arquitectura Base</h3>
+                        <p class="holo-desc">
+                            Se consolidó la identidad temática inspirada en Star Wars ("Yoda Labs"). Establecimos la paleta de colores galáctica (#090D14 para fondo espacial, acentos en verde #58C98B y azul laboratorio #214358), variables CSS centralizadas y la tipografía Space Grotesk + Inter para lograr una atmósfera de ciencia ficción limpia y moderna.
+                        </p>
+                        <div class="dificultad-box">
+                            <strong>⚠️ Desafío superado:</strong>
+                            <p>Encontrar el balance entre una estética temática inmersiva y la legibilidad/accesibilidad requerida en proyectos profesionales de desarrollo web.</p>
+                        </div>
+                        <footer class="responsables-fila">
+                            <span style="font-size: 0.85rem; color: #94a3b8;">Tripulantes asignados:</span>
+                            <div class="responsables-list">
+                                <span class="responsable-pill"><img src="img/yoda2.jpg" alt="Leonel" class="avatar-mini"> Leonel</span>
+                                <span class="responsable-pill"><img src="img/yoda10.jpg" alt="Maximiliano" class="avatar-mini"> Maximiliano</span>
+                                <span class="responsable-pill"><img src="img/yoda7.jpg" alt="Yohana" class="avatar-mini"> Yohana</span>
+                                <span class="responsable-pill"><img src="img/yoda6.jpg" alt="Melisa" class="avatar-mini"> Melisa</span>
+                                <span class="responsable-pill"><img src="img/yoda1.jpg" alt="Itziar" class="avatar-mini"> Itziar</span>
+                            </div>
+                        </footer>
+                    </article>
+                </div>
+
+                <!-- Entrada 2: Canvas Estelar y Navegación -->
+                <div class="timeline-item" data-categoria="avance">
+                    <div class="timeline-nodo"></div>
+                    <article class="holo-card">
+                        <header class="holo-header">
+                            <div class="holo-fecha-tag">
+                                <span>📅</span> <span>Hito 2 · 15/03/2026</span>
+                            </div>
+                            <span class="tipo-badge tipo-avance">Avance Técnico</span>
+                        </header>
+                        <h3 class="holo-title">Motor de Hiperespacio en Canvas & Header Fijo Inteligente</h3>
+                        <p class="holo-desc">
+                            Desarrollo del fondo espacial interactivo con HTML5 Canvas y JavaScript vanilla puro. Simula perspectiva tridimensional estelar calculando coordenadas X, Y, Z con estelas suaves. Además, se implementó el observador de scroll (`IntersectionObserver` y eventos de scroll) para revelar el header dinámico con efecto glassmorphism al desplazarse.
+                        </p>
+                        <div class="dificultad-box">
+                            <strong>⚠️ Desafío superado:</strong>
+                            <p>Optimización del bucle `requestAnimationFrame` y cálculo de proyecciones radiales para garantizar 60 FPS estables sin saturar el rendimiento del navegador en dispositivos móviles.</p>
+                        </div>
+                        <footer class="responsables-fila">
+                            <span style="font-size: 0.85rem; color: #94a3b8;">Tripulantes asignados:</span>
+                            <div class="responsables-list">
+                                <span class="responsable-pill"><img src="img/yoda2.jpg" alt="Leonel" class="avatar-mini"> Leonel</span>
+                                <span class="responsable-pill"><img src="img/yoda1.jpg" alt="Itziar" class="avatar-mini"> Itziar</span>
+                            </div>
+                        </footer>
+                    </article>
+                </div>
+
+                <!-- Entrada 3: Holocrón 3D Flip Cards -->
+                <div class="timeline-item" data-categoria="avance">
+                    <div class="timeline-nodo"></div>
+                    <article class="holo-card">
+                        <header class="holo-header">
+                            <div class="holo-fecha-tag">
+                                <span>📅</span> <span>Hito 3 · 18/03/2026</span>
+                            </div>
+                            <span class="tipo-badge tipo-avance">Avance Técnico</span>
+                        </header>
+                        <h3 class="holo-title">Implementación de Holocrones 3D Flip para Perfiles Individuales</h3>
+                        <p class="holo-desc">
+                            Creación de las tarjetas interactivas de perfiles con rotación tridimensional (`preserve-3d` y `rotateY(180deg)`). Cada integrante cuenta con un color de sable láser personalizado (azul, naranja, rosa, rojo, violeta), badges de stack tecnológico, cualidades analíticas, y galería multimedia con enlaces directos a sus obras musicales y cinematográficas preferidas.
+                        </p>
+                        <div class="dificultad-box">
+                            <strong>⚠️ Desafío superado:</strong>
+                            <p>Gestionar el `backface-visibility: hidden` y la interacción táctil en pantallas móviles para permitir la rotación fluida sin cortar el contenido textual del dorso.</p>
+                        </div>
+                        <footer class="responsables-fila">
+                            <span style="font-size: 0.85rem; color: #94a3b8;">Tripulantes asignados:</span>
+                            <div class="responsables-list">
+                                <span class="responsable-pill"><img src="img/yoda10.jpg" alt="Maximiliano" class="avatar-mini"> Maximiliano</span>
+                                <span class="responsable-pill"><img src="img/yoda7.jpg" alt="Yohana" class="avatar-mini"> Yohana</span>
+                                <span class="responsable-pill"><img src="img/yoda6.jpg" alt="Melisa" class="avatar-mini"> Melisa</span>
+                            </div>
+                        </footer>
+                    </article>
+                </div>
+
+                <!-- Entrada 4: Adaptabilidad Responsive -->
+                <div class="timeline-item" data-categoria="desafio">
+                    <div class="timeline-nodo"></div>
+                    <article class="holo-card">
+                        <header class="holo-header">
+                            <div class="holo-fecha-tag">
+                                <span>📅</span> <span>Hito 4 · 20/03/2026</span>
+                            </div>
+                            <span class="tipo-badge tipo-desafio">Desafío y Optimización</span>
+                        </header>
+                        <h3 class="holo-title">Diseño Adaptativo Galáctico: Media Queries 400px / 900px / 1200px</h3>
+                        <p class="holo-desc">
+                            Revisión exhaustiva de la grilla de integrantes y páginas de perfil para garantizar perfecta adaptabilidad en pantallas móviles pequeñas (400px), tabletas (900px) y estaciones de escritorio (1200px+). Ajuste de tamaños tipográficos relativos (clamp/rem) y reordenamiento flexible de columnas.
+                        </p>
+                        <div class="dificultad-box">
+                            <strong>⚠️ Desafío superado:</strong>
+                            <p>Evitar scrollbars horizontales indeseadas por elementos de ancho fijo y optimizar el tamaño de las imágenes multimedia en resoluciones angostas.</p>
+                        </div>
+                        <footer class="responsables-fila">
+                            <span style="font-size: 0.85rem; color: #94a3b8;">Tripulantes asignados:</span>
+                            <div class="responsables-list">
+                                <span class="responsable-pill"><img src="img/yoda1.jpg" alt="Itziar" class="avatar-mini"> Itziar</span>
+                                <span class="responsable-pill"><img src="img/yoda2.jpg" alt="Leonel" class="avatar-mini"> Leonel</span>
+                            </div>
+                        </footer>
+                    </article>
+                </div>
+
+                <!-- Entrada 5: Bitácora & Cierre de Fase -->
+                <div class="timeline-item" data-categoria="avance">
+                    <div class="timeline-nodo"></div>
+                    <article class="holo-card">
+                        <header class="holo-header">
+                            <div class="holo-fecha-tag">
+                                <span>📅</span> <span>Hito 5 · 23/03/2026</span>
+                            </div>
+                            <span class="tipo-badge tipo-entrega">Entrega & Validación</span>
+                        </header>
+                        <h3 class="holo-title">Revisión de Enlaces, Integración de Bitácora y Control de Calidad</h3>
+                        <p class="holo-desc">
+                            Refactorización integral de la bitácora para sincronizarla con la estética galáctica de Yoda Labs. Corrección de rutas relativas, incorporación de tabla resumen de auditoría, filtros interactivos y verificación de navegación entre todas las páginas del equipo.
+                        </p>
+                        <div class="dificultad-box">
+                            <strong>⚠️ Desafío superado:</strong>
+                            <p>Estandarización de las rutas relativas en la raíz del proyecto para evitar errores de carga de hojas de estilo y scripts entre páginas hermanas.</p>
+                        </div>
+                        <footer class="responsables-fila">
+                            <span style="font-size: 0.85rem; color: #94a3b8;">Tripulantes asignados:</span>
+                            <div class="responsables-list">
+                                <span class="responsable-pill"><img src="img/yoda2.jpg" alt="Leonel" class="avatar-mini"> Leonel</span>
+                                <span class="responsable-pill"><img src="img/yoda10.jpg" alt="Maximiliano" class="avatar-mini"> Maximiliano</span>
+                                <span class="responsable-pill"><img src="img/yoda7.jpg" alt="Yohana" class="avatar-mini"> Yohana</span>
+                                <span class="responsable-pill"><img src="img/yoda6.jpg" alt="Melisa" class="avatar-mini"> Melisa</span>
+                                <span class="responsable-pill"><img src="img/yoda1.jpg" alt="Itziar" class="avatar-mini"> Itziar</span>
+                            </div>
+                        </footer>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Tabla Holográfica de Auditoría / Resumen Rápido -->
+        <section class="tabla-seccion">
+            <div class="seccion-encabezado">
+                <h2><span>📊</span> Registro Tabular del Escuadrón</h2>
+                <p>Auditoría consolidada de decisiones, dificultades y miembros responsables según los lineamientos de la cátedra.</p>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="holo-tabla">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Decisión / Avance Táctico</th>
+                            <th>Dificultades Afrontadas</th>
+                            <th>Responsables</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-fecha">12/03/2026</td>
+                            <td>
+                                <strong>Arquitectura & Temática:</strong><br>
+                                Adopción del concepto Yoda Labs (Star Wars), paleta de colores `#090D14`, `#58C98B`, `#214358` y tipografías Google Fonts.
+                            </td>
+                            <td>Debate y selección de una temática atractiva sin perder la sobriedad técnica ni la usabilidad.</td>
+                            <td class="td-responsables">Grupo 29 (Equipo Completo)</td>
+                        </tr>
+                        <tr>
+                            <td class="td-fecha">15/03/2026</td>
+                            <td>
+                                <strong>Espacio Canvas & Encabezado:</strong><br>
+                                Render de campo estelar 3D en Canvas nativo y animación de header fijo flotante con `backdrop-filter: blur`.
+                            </td>
+                            <td>Ajuste de persistencia y consumo de CPU en la animación continua de partículas estelares.</td>
+                            <td class="td-responsables">Leonel, Itziar</td>
+                        </tr>
+                        <tr>
+                            <td class="td-fecha">18/03/2026</td>
+                            <td>
+                                <strong>Holocrones Flip 3D:</strong><br>
+                                Construcción de tarjetas interactivas de presentación con rotación CSS 3D y colores de sables de luz por integrante.
+                            </td>
+                            <td>Manejo de superposición de capas y compatibilidad táctil del evento flip en dispositivos móviles.</td>
+                            <td class="td-responsables">Maximiliano, Yohana, Melisa</td>
+                        </tr>
+                        <tr>
+                            <td class="td-fecha">20/03/2026</td>
+                            <td>
+                                <strong>Diseño Responsivo:</strong><br>
+                                Implementación de puntos de quiebre en `400px`, `900px` y `1200px` para soporte en móviles, tablets y monitores.
+                            </td>
+                            <td>Evitar desbordes horizontales de las galerías de discos y películas en resoluciones pequeñas.</td>
+                            <td class="td-responsables">Itziar, Leonel</td>
+                        </tr>
+                        <tr>
+                            <td class="td-fecha">23/03/2026</td>
+                            <td>
+                                <strong>Bitácora & Validación Integral:</strong><br>
+                                Integración estética de la bitácora con timeline interactivo, filtrado dinámico JS y auditoría cruzada de enlaces.
+                            </td>
+                            <td>Normalización de rutas relativas entre archivos raíz y unificación del sistema de navegación.</td>
+                            <td class="td-responsables">Grupo 29 (Equipo Completo)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Botón inferior para volver al inicio -->
+        <div class="volver-contenedor" style="justify-content: center; margin-top: 3rem;">
+            <a href="index.html" class="btn-volver-laser" style="padding: 0.9rem 2.2rem; font-size: 1.1rem;">
+                <span>🚀</span> Explorar Perfiles del Escuadrón
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer Galáctico -->
+    <footer class="footer-sitio">
+        <p>Yoda Labs · TP1 · FrontEnd · IFTS N°29 · 2026</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/bitacora.js"></script>
+</body>
+</html>
